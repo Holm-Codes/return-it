@@ -34,3 +34,75 @@
    color: var(--text);
    background-color: var(--backgr);
  }
+
+/* Reset and Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger-menu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Menu Styles */
+.menu {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position for full-screen effect */
+  top: 0;
+  right: 0;
+  width: 100vw; /* Take full viewport width */
+  height: 100vh; /* Take full viewport height */
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  background: rgba(0, 0, 0, 0.8); /* Transparent dark background */
+  z-index: 999; /* Ensure it's above other content */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu Items */
+.menu li {
+  color: rgba(255, 255, 255, 0.8); /* Semi-transparent text */
+  font-size: 24px;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover and Click Effects */
+.menu li:hover {
+  color: #fff; /* Fully visible text */
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+.menu li:active {
+  transform: scale(1.4); /* Stay larger on click */
+}
