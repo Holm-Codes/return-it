@@ -1,37 +1,136 @@
-/**
- * file: css/css.css
- * purpose: styling
- **/
+:root {
+  --backgr: #FFFFFF;
+  --text: #161616;
+  --darkgreen: #173A24;
+  --lightgreen: #BBC397;
+  --logogreen: #29633B;
+  --darkblue: #5C91A4;
+  --lightblue: #BEE3E7;
+  --button-color: #5C91A4;
+  --button-hover-color: #29633B;
+}
 
-/* Define variables in the :root */
- :root {
-   --backgr: #FFFFFF;
-   --text: #161616;
-   --darkgreen: #173A24;
-   --lightgreen: #BBC397;
-   --logogreen: #29633B;
-   --darkblue: #5C91A4;
-   --lightblue: #BEE3E7;
- }
-
- h1, h2{
+/* Generelle skrifttyper */
+h1, h2 {
   font-family: "railroad-gothic-atf", sans-serif;
   font-weight: 600;
-  font-style: normal;
- }
+}
 
- h3, h4, h5, h6{
+h3, h4, h5, h6, p {
   font-family: Verdana, sans-serif;
- }
+  color: var(--text);
+}
 
- p{
-  font-family: "richmond-text", sans-serif;
-  font-weight: 400;
-  font-style: normal;
- }
- 
- main {
-   color: var(--text);
-   background-color: var(--backgr);
- }
+/* Main styling */
+main {
+  color: var(--text);
+  background-color: var(--backgr);
+}
 
+/* Container og cirkel */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transform: translateX(-50px); /* Flyt cirklen lidt til venstre */
+}
+
+.circle {
+  position: relative;
+  width: 600px;
+  height: 800px;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border: 2px dashed #999;
+  border-radius: 50%;
+}
+
+/* Process Step (Ikoner i cirklen) */
+.process-step {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg))
+             translate(0, -350px) rotate(calc(-1 * var(--angle) * 1deg));
+  transition: transform 0.3s ease;
+}
+
+.process-step img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.process-step:hover {
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg))
+             translate(0, -350px) rotate(calc(-1 * var(--angle) * 1deg))
+             scale(1.1);
+}
+
+.process-step figcaption {
+  margin-top: 5px;
+  font-weight: bold;
+  color: var(--darkgreen);
+}
+
+/* Process Details (Midtertekst) */
+.process-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.process-details h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.process-details p {
+  font-size: 25px;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Tekst og knap under cirklen */
+.process-tekst-knap {
+  text-align: center;
+  margin-top: -130px; /* Justér afstand fra cirklen */
+}
+
+.process-tekst-knap h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.process-tekst-knap .button {
+  display: inline-block;
+  padding: 20px 25px;
+  background-color: var(--button-color);
+  color: #FFFFFF;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-tekst-knap .button:hover {
+  transform: scale(1.05); /* Lidt større knap ved hover */
+  background-color: var(--button-hover-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Skygge ved hover */
+  cursor: pointer;
+}
