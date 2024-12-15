@@ -128,6 +128,14 @@
 */
 /* Header/burgermenu styling slut */
 
+.hero-intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
 .button1{
   display: flex;
   justify-self: center;
@@ -140,4 +148,31 @@
   background-color: var(--darkblue);
   font-family: "railroad-gothic-atf", sans-serif;
   font-size: large;
+}
+
+.hvorfor-returnit-container{
+  height: 50vh;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.ikon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.hvorfor-returnit-ikoner{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+
+}
+
+.hvorfor-returnit-img{
+  height: 100px;
+  width: 100px;
 }
