@@ -148,6 +148,13 @@
   background-color: var(--darkblue);
   font-family: "railroad-gothic-atf", sans-serif;
   font-size: large;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1:hover{
+  color: var(--text);
+  background-color: var(--lightblue);
 }
 
 .hvorfor-returnit-container{
