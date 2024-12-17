@@ -235,6 +235,14 @@ section {
   text-align: center; /* Centrerer teksten */
 }
 
+#hvorfor-returnit-titel{
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: 40px;
+  color: var(--darkblue);
+  margin-top: 25px;
+  margin-bottom: -10px;
+}
+
 .ikon-container{
   display: flex;
   flex-direction: column;
