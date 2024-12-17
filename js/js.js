@@ -2,25 +2,28 @@
  * file: js/js.js
  * purpose: Behaviors
  **/
+"use strict";
+
 console.log('Success: JavaScript from js/js.js running!')
 
 document.addEventListener('DOMContentLoaded', () => {
-    const burgerMenu = document.querySelector('.burger-menu'); // Burger menu icon
-    const menu = document.querySelector('.menu'); // Hidden menu
-    const menuLinks = document.querySelectorAll('.menu a'); // All menu links
+    const burgerMenu = document.querySelector('.burger-menu'); // Hent burger-menu ikonet (de tre horisontale streger)
+    const menu = document.querySelector('.menu'); // Hent selve menuen, som er skjult som standard
+    const menuLinks = document.querySelectorAll('.menu a'); // Hent alle linkene i menuen (a-tags)
 
-    // Toggle Menu Visibility
+    // Tilføj en 'click' event listener til burger-menu ikonet
     burgerMenu.addEventListener('click', () => {
-        menu.classList.toggle('open'); // Toggle 'open' class to show/hide menu
+        menu.classList.toggle('open'); // Når burger-menuen bliver klikket, toggles 'open' class, som viser/skjuler menuen
     });
 
-    // Highlight active menu item
+    // For hver af menuens links (a-tags) gør følgende:
     menuLinks.forEach(link => {
+        // Tilføj en 'click' event listener til hvert link
         link.addEventListener('click', (e) => {
-            // Remove 'active' class from all links
+            // Fjern 'active' class fra alle links for at fjerne aktiv stil
             menuLinks.forEach(link => link.classList.remove('active'));
 
-            // Add 'active' class to the clicked link
+            // Tilføj 'active' class til det link, der er blevet klikket på
             e.currentTarget.classList.add('active');
         });
     });
