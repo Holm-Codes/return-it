@@ -128,6 +128,8 @@
 */
 /* Header/burgermenu styling slut */
 
+/* Hero styling start */
+
 .hero-intro{
   display: flex;
   flex-direction: column;
@@ -136,13 +138,17 @@
   height: 50vh;
 }
 
+#titel{
+  font-size: 100px;
+}
+
 .button1{
   display: flex;
   justify-self: center;
   align-self: center;
   border: none;
-  padding: 10px 20px;
-  padding-top: 12px;
+  padding: 15px 30px;
+  padding-top: 16px;
   border-radius: 30px;
   color: var(--backgr);
   background-color: var(--darkblue);
@@ -157,10 +163,20 @@
   background-color: var(--lightblue);
 }
 
+/* Hero styling slut */
+
+/* Hvorfor Return It sektion styling start */
+
 .hvorfor-returnit-container{
   height: 50vh;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.hvorfor-returnit-intro{
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px;
 }
 
 .ikon-container{
@@ -168,7 +184,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 250px;
+}
+
+.ikon-container-tekst{
+  margin-top: -30px;
 }
 
 .hvorfor-returnit-ikoner{
@@ -180,6 +200,8 @@
 }
 
 .hvorfor-returnit-img{
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
+
+/* Hvorfor Return It sektion styling slut */
