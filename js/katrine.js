@@ -51,9 +51,18 @@ steps.forEach((step, index) => {
         const data = processData[title]; // Hent data baseret på titel
 
         if (data) {
-            // Opdater midterteksten
-            processTitle.textContent = title;
-            processDescription.textContent = data.description;
+            // Hent midtersektionen og tilføj fade-effekt
+            const details = document.querySelector('.process-details');
+            details.classList.add('fade'); // Start fade-out
+
+            setTimeout(() => {
+                // Opdater midterteksten efter fade-out
+                processTitle.textContent = title;
+                processDescription.textContent = data.description;
+
+                // Fjern fade-effekt (fade-in)
+                details.classList.remove('fade');
+            }, 300); // Matcher CSS-transition (0.3s)
 
             // Fjern "active" fra alle ikoner og pile
             steps.forEach(s => s.classList.remove("active"));
@@ -71,3 +80,19 @@ steps.forEach((step, index) => {
 // Standardtekst ved start
 processTitle.textContent = "Se, hvordan Return Its kredsløb skaber bæredygtige løsninger";
 processDescription.textContent = "Klik på et ikon og følg hvert trin i genanvendelsesprocessen";
+
+// Fade-in-effekter for andre sektioner
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate'); // Tilføj 'animate'-klassen
+      observer.unobserve(entry.target); // Stop observering efter animationen er kørt
+    }
+  });
+});
+
+fadeInElements.forEach(element => {
+  observer.observe(element);
+});
