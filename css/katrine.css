@@ -37,7 +37,7 @@ main {
 
 .circle-header {
   text-align: center; /* Centrer teksten horisontalt */
-  margin: 10px auto -90px; /* Øvre og nedre margin */
+  margin: 10px auto -10px; /* Øvre og nedre margin */
   font-family: "railroad-gothic-atf", sans-serif; /* Font */
   font-weight: bold;
   font-size: 40px; /* Skriftstørrelse */
@@ -46,6 +46,7 @@ main {
   max-width: 550px;
   line-height: 1; /* Gør linjeafstanden lidt pænere */
 }
+
 /* Container centrerer cirklen */
 .container {
   display: flex;
@@ -137,14 +138,18 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -35%);
   text-align: center;
   color: #173A24;
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.5;
+  opacity: 1; /* Start synlig */
+  transition: opacity 0.3s ease-in-out; /* Glidende overgang */
 }
-
+.process-details.fade {
+  opacity: 0; /* Fade out når klassen "fade" tilføjes */
+}
 
 #process-title {
   font-family: Verdana, sans-serif;
@@ -160,8 +165,6 @@ main {
   line-height: 1.5;
   color: #173A24; /* Mørkere farve for bedre kontrast */
 }
-
-
 
 
 /* Skjul alle pile som standard */
@@ -187,44 +190,193 @@ main {
   display: block; /* Gør pilen synlig */
 }
 
-
-
-
-
-
-
 .process-tekst-knap {
   text-align: center; /* Centrerer alt */
-  margin-top: -180px; /* Afstand fra cirklen */
   color: #173A24; /* Grøn tekstfarve */
-}
-
-.process-tekst-knap h3,
-.process-tekst-knap .button {
-  margin: 20px auto; /* Centrerer og giver lidt luft */
+  margin-top: -70px;
+  margin-bottom: 50px;
 }
 
 .process-tekst-knap h3 {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 50px; /* Luft mellem h3 og knappen */
 }
 
 .process-tekst-knap .button {
-  display: inline-block;
+display: inline-block;
+font-family: "railroad-gothic-atf", sans-serif;
+padding: 25px 35px; /* Størrelse på knappen */
+background-color: #5C91A4;
+color: #ffffff;
+border-radius: 50px; /* Runde kanter */
+text-decoration: none;
+font-size: 20px;
+transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.process-tekst-knap .button {
+  margin-left: -10px;
+}
+
+.process-tekst-knap .button:hover,
+.bundsektion-sluttekst .button:hover {
+  transform: scale(1.1);
+}
+
+.fade-in {
+  opacity: 0; /* Start som usynlig */
+  transform: translateY(50px); /* Start nedefra */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.animate {
+  opacity: 1; /* Bliv synlig */
+  transform: translateY(0); /* Flyt til den oprindelige position */
+}
+.bundsektion {
+  width: 100%;
+  height: 2500px; /* Juster højden efter behov */
+  background-image: url('../images/baggrund_bundsektion.webp'); /* sti til baggrundsbillede */
+  background-size: cover; /* Sørger for, at billedet dækker hele sektionen */
+  background-repeat: no-repeat;
+  background-position: top center; /* Placer billedet øverst og centreret */
+}
+
+.bundsektion-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Beholder overskrift øverst */
+  gap: 50px;
+}
+
+/* Overskrift og underrubrik */
+.bundsektion-øverste-content {
+  text-align: center;
+  padding-top: 200px;
+}
+
+.overskrift-bundsektion {
+  font-size: 40px;
+  color: #5C91A4;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.underrubrik {
+  font-size: 25px;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
+/* Flex container for grafik og tekst */
+.bundsektion-content {
+  display: flex; /* Aktiver Flexbox */
+  flex-direction: row; /* Sørger for vandret layout */
+  align-items: flex-start; /* Topjuster indholdet */
+  gap: 100px; /* Luft mellem venstre og højre sektion */
+}
+
+.grafik-billeder {
+  display: flex;
+  flex-direction: column;
+  gap: 200px; /* Luft mellem billederne */
+  margin: 0 auto; /* Centrer containeren */
+  margin-top: 60px;
+}
+
+.grafik-billeder img {
+  height: auto; /* Bevar proportionerne */
+}
+
+
+/* Animation til begge elementer */
+.animated-element {
+  animation: moveUpAndDown 2s ease-in-out infinite alternate;
+}
+
+/* Bestikket: Ingen forsinkelse */
+.bestik {
+  max-width: 250px;
+  height: auto;
+  margin-left: auto;
+  animation-delay: 0s; /* Starter med det samme */
+}
+
+/* Champagneglas: Forsinkelse */
+.champagneglas {
+  max-width: 450px;
+  height: auto;
+  margin-top: -10px;
+  align-self: center;
+  animation-delay: 1s; /* Starter efter 1 sekund */
+}
+
+/* Keyframes for op-og-ned-bevægelse */
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.mellemrubrik-wrapper {
+  max-width: 550px; /* Begræns tekstens bredde */
+  margin-left: auto; /* Skubber teksten mod højre */
+  padding: 5px;
+}
+
+.mellemrubrik-wrapper h3 {
+  font-size: 25px;
+  color: #5C91A4;
+  margin-bottom: 10px;
+}
+
+.mellemrubrik-wrapper p {
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+
+.nederste-mellemrubrik {
+  margin-top: 60px;
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+
+.nederste-mellemrubrik ul {
+  margin-top: -20px; /* Juster denne værdi til ønsket afstand */
+  padding-left: 20px; /* Bevarer plads til bullets */
+}
+
+.slut-overskrift {
+  font-size: 25px;
+  color: #5C91A4;
+  margin-bottom: 10px;
+}
+
+.slut-tekst {
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 1.5;  
+}
+.bundsektion-sluttekst .button {
+  display: block;
+  margin: 0 auto;
+  width: fit-content; /* Tilpasser bredden til indholdet */
+  margin-top: 100px;
   font-family: "railroad-gothic-atf", sans-serif;
-  padding: 25px 25px;
-  background-color: #5C91A4; /* Blå farve */
-  color: #FFFFFF; /* Hvid tekst */
+  padding: 25px 35px; /* Størrelse på knappen */
+  background-color: #BEE3E7;
+  color: #173A24;
   border-radius: 50px; /* Runde kanter */
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.process-tekst-knap .button:hover {
-  transform: scale(1.05);
-  background-color: #29633B;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
