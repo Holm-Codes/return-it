@@ -12,57 +12,77 @@
 <body>
   <header></header>
   <main>
-      <!-- Overskrift over cirklen -->
-  <div class="circle-header">
-    RETURN IT TAGER SIG AF HELE GENANVENDELSESPROCESSEN
-  </div>
-    <div class="container">
-        <div class="circle"></div>
-        <figure class="process-step" style="--angle: 0;">
-            <img src="images/forhandling.webp" alt="Indledende Samtale">
-            <figcaption>Indledende Samtale</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 45;">
-            <img src="images/produktion.webp" alt="Produktion">
-            <figcaption>Produktion</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 90;">
-            <img src="images/levering.webp" alt="Levering">
-            <figcaption>Levering</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 135;">
-            <img src="images/emballage.webp" alt="Brug af emballage">
-            <figcaption>Brug af emballage</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 180;">
-            <img src="images/indsamling.webp" alt="Indsamling">
-            <figcaption>Indsamling</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 225;">
-            <img src="images/afhentning.webp" alt="Afhentning">
-            <figcaption>Afhentning</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 270;">
-            <img src="images/vask_omsmeltning.webp" alt="Vask og omsmeltning">
-            <figcaption>Vask og omsmeltning</figcaption>
-        </figure>
-        <figure class="process-step" style="--angle: 315;">
-            <img src="images/ny_emballage.webp" alt="Klar til ny emballage">
-            <figcaption>Klar til ny emballage</figcaption>
-        </figure>
+    <!-- Overskrift over cirklen -->
+    <div class="circle-header">
+      RETURN IT TAGER SIG AF HELE GENANVENDELSESPROCESSEN
     </div>
 
-    <div class="process-details">
-        <h3 id="process-title">Se, hvordan Return Its kredsløb skaber bæredygtige løsninger</h2>
-        <p id="process-description">Klik på et ikon og følg hvert trin i genanvendelsesprocessen</p>
+    <!-- Container til cirklen og pile -->
+    <div class="container">
+      <!-- Ikoner og pile -->
+      <figure class="process-step" style="--angle: 0;">
+        <img src="images/forhandling.webp" alt="Indledende Samtale">
+        <figcaption>Indledende Samtale</figcaption>
+      </figure>
+      <div class="pil" id="pil-0" style="--angle: 24.5;"></div>
+
+      <figure class="process-step" style="--angle: 45;">
+        <img src="images/produktion.webp" alt="Produktion">
+        <figcaption>Produktion</figcaption>
+      </figure>
+      <div class="pil" id="pil-1" style="--angle: 70.5;"></div>
+
+      <figure class="process-step" style="--angle: 90;">
+        <img src="images/levering.webp" alt="Levering">
+        <figcaption>Levering</figcaption>
+      </figure>
+      <div class="pil" id="pil-2" style="--angle: 114.5;"></div>
+
+      <figure class="process-step" style="--angle: 135;">
+        <img src="images/emballage.webp" alt="Brug af emballage">
+        <figcaption>Brug af emballage</figcaption>
+      </figure>
+      <div class="pil" id="pil-3" style="--angle: 162.5;"></div>
+
+      <figure class="process-step" style="--angle: 180;">
+        <img src="images/indsamling.webp" alt="Indsamling">
+        <figcaption>Indsamling</figcaption>
+      </figure>
+      <div class="pil" id="pil-4" style="--angle: 198.5;"></div>
+
+      <figure class="process-step" style="--angle: 225;">
+        <img src="images/afhentning.webp" alt="Afhentning">
+        <figcaption>Afhentning</figcaption>
+      </figure>
+      <div class="pil" id="pil-5" style="--angle: 247.5;"></div>
+
+      <figure class="process-step" style="--angle: 270;">
+        <img src="images/vask_omsmeltning.webp" alt="Vask og omsmeltning">
+        <figcaption>Vask og omsmeltning</figcaption>
+      </figure>
+      <div class="pil" id="pil-6" style="--angle: 290.5;"></div>
+
+      <figure class="process-step" style="--angle: 315;">
+        <img src="images/ny_emballage.webp" alt="Klar til ny emballage">
+        <figcaption>Klar til ny emballage</figcaption>
+      </figure>
+      <div class="pil" id="pil-7" style="--angle: 335.5;"></div>
     </div>
+
+    <!-- Midtertekster -->
+    <div class="process-details">
+      <h3 id="process-title">Se, hvordan Return Its kredsløb skaber bæredygtige løsninger</h3>
+      <p id="process-description">Klik på et ikon og følg hvert trin i genanvendelsesprocessen</p>
+    </div>
+
+    <!-- Knappen under cirklen -->
     <div class="process-tekst-knap">
-        <h3>Vil du vide, hvordan Return It kan gøre dit event grønnere og mere effektivt?</h3>
-        <a href="#kontakt" class="button">KONTAKT OS HER</a>
+      <h3>Vil du vide, hvordan Return It kan gøre dit event grønnere og mere effektivt?</h3>
+      <a href="#kontakt" class="button">KONTAKT OS HER</a>
     </div>
   </main>
 
-  <!-- Link til JavaScript-filen BUNDEN -->
+  <!-- Link til JavaScript-filen -->
   <script src="js/katrine.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ const processData = {
     },
     "Levering": {
         image: "images/levering.webp",
-        description: "Efter produktionen af emballagen bliver din ordre leveret til dig i god tid inden eventet. Vi garanterer en præcis og fleksibel levering, så i kan fokusere på jeres arrangerement."
+        description: "Efter produktionen af emballagen bliver din ordre leveret til dig i god tid inden eventet. Vi garanterer en præcis og fleksibel levering, så i kan fokusere på jeres arrangement."
     },
     "Brug af emballage": {
         image: "images/emballage.webp",
@@ -24,15 +24,15 @@ const processData = {
     },
     "Afhentning": {
         image: "images/afhentning.webp",
-        description: "Alt emballage afhentes hurtigt of professionelt via vores samarbejdspartnere. Vi minimerer derigennem dine logistiske bekymringer ved at tage ansvar for hele processen."
+        description: "Alt emballage afhentes hurtigt og professionelt via vores samarbejdspartnere. Vi minimerer derigennem dine logistiske bekymringer ved at tage ansvar for hele processen."
     },
     "Vask og omsmeltning": {
         image: "images/vask_omsmeltning.webp",
-        description: "Efter emballagen er fragtet tilbage til os påbegynder genanvendelses processen. Vi vasker og omsmelter emballagen til nye produkter, og derigennem understøtter jeres bæredygtige ambitioner."
+        description: "Efter emballagen er fragtet tilbage til os påbegynder genanvendelsesprocessen. Vi vasker og omsmelter emballagen til nye produkter, og derigennem understøtter jeres bæredygtige ambitioner."
     },
     "Klar til ny emballage": {
         image: "images/ny_emballage.webp",
-        description: "Processen slutter med, at det nye emballage er klar til burg på fremtidige events. Med vores cirkulære system får du en bæredygtig og økonomisk løsning, der sparer dig og dit arrangement ressourcer."
+        description: "Processen slutter med, at det nye emballage er klar til brug på fremtidige events. Med vores cirkulære system får du en bæredygtig og økonomisk løsning, der sparer dig og dit arrangement ressourcer."
     }
 };
 
@@ -40,23 +40,28 @@ const processData = {
 const processTitle = document.getElementById("process-title");
 const processDescription = document.getElementById("process-description");
 
-// Vælg alle ikoner
+// Vælg alle ikoner og pile
 const steps = document.querySelectorAll(".process-step");
+const pile = document.querySelectorAll(".pil");
 
-// Lyt efter klik på hvert ikon
-steps.forEach(step => {
+// Tilføj klikfunktionalitet
+steps.forEach((step, index) => {
     step.addEventListener("click", function () {
         const title = step.querySelector("figcaption").textContent.trim(); // Hent titel
-        const data = processData[title]; // Hent data baseret på titlen
+        const data = processData[title]; // Hent data baseret på titel
 
         if (data) {
             // Opdater midterteksten
             processTitle.textContent = title;
             processDescription.textContent = data.description;
 
-            // Valgfri: Fremhæv det valgte ikon
+            // Fjern "active" fra alle ikoner og pile
             steps.forEach(s => s.classList.remove("active"));
+            pile.forEach(p => p.classList.remove("active"));
+
+            // Tilføj "active" til det valgte ikon og den tilsvarende pil
             step.classList.add("active");
+            pile[index].classList.add("active");
         } else {
             console.error("Data for '" + title + "' ikke fundet!");
         }
