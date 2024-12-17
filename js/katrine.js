@@ -1,6 +1,6 @@
 console.log("JavaScript loaded!");
-
-// Opret et objekt med data for hvert ikon
+// Følgende er et bjekt, som gemmer data for hvert trin i genanvendelsesprocessen. 
+// Hvert trin har et navn (f.eks. "Indledende Samtale") som nøgle, og tilknyttet er et billede og en beskrivelse.
 const processData = {
     "Indledende Samtale": {
         image: "images/forhandling.webp",
@@ -36,63 +36,79 @@ const processData = {
     }
 };
 
-// Hent elementerne til midtervisning
+// Her findes HTML-elementerne med id'erne "process-title" og "process-description". 
+// De indeholder overskriften og beskrivelsen, som vises i midten af cirklen.
 const processTitle = document.getElementById("process-title");
 const processDescription = document.getElementById("process-description");
 
-// Vælg alle ikoner og pile
+// Der bruges querySelectorAll til at finde alle elementer med klassen "process-step" (ikonerne) 
+// og "pil" (pile), så der kan tilføjes funktionalitet til dem senere.
+// De gemmes i to variabler:
+// - "steps" indeholder alle ikonerne i cirklen.
+// - "pile" indeholder alle pile, som hører til hvert ikon.
 const steps = document.querySelectorAll(".process-step");
 const pile = document.querySelectorAll(".pil");
 
-// Tilføj klikfunktionalitet
+// Gennemgår alle ikoner (elementer med klassen "process-step") og tilføjer en "click"-hændelse.
+// Når et ikon bliver klikket på, opdateres teksten i midten af cirklen, og den tilsvarende pil markeres.
 steps.forEach((step, index) => {
     step.addEventListener("click", function () {
-        const title = step.querySelector("figcaption").textContent.trim(); // Hent titel
-        const data = processData[title]; // Hent data baseret på titel
+        // Henter titlen fra ikonet (teksten i <figcaption>)
+        const title = step.querySelector("figcaption").textContent.trim();
+        // Finder den tilsvarende data (billede og beskrivelse) i objektet "processData"
+        const data = processData[title];
 
         if (data) {
-            // Hent midtersektionen og tilføj fade-effekt
+           // Tilføjer en fade-out effekt til midterteksten
             const details = document.querySelector('.process-details');
-            details.classList.add('fade'); // Start fade-out
+            details.classList.add('fade'); // Gør teksten usynlig midlertidigt
 
             setTimeout(() => {
-                // Opdater midterteksten efter fade-out
+                // Opdaterer overskriften og beskrivelsen, når fade-out er færdig
                 processTitle.textContent = title;
                 processDescription.textContent = data.description;
 
-                // Fjern fade-effekt (fade-in)
+                // Fjerner fade-out effekten, så teksten bliver synlig igen
                 details.classList.remove('fade');
-            }, 300); // Matcher CSS-transition (0.3s)
+            }, 300); // Matcher fade-out tiden i CSS 
 
-            // Fjern "active" fra alle ikoner og pile
+            // Fjerner "active"-klassen fra alle ikoner og pile
             steps.forEach(s => s.classList.remove("active"));
             pile.forEach(p => p.classList.remove("active"));
 
-            // Tilføj "active" til det valgte ikon og den tilsvarende pil
+            // Tilføjer "active"-klassen til det valgte ikon og den tilsvarende pil
             step.classList.add("active");
             pile[index].classList.add("active");
         } else {
+            // Hvis der ikke findes data for det valgte ikon, vises en fejl i konsollen
             console.error("Data for '" + title + "' ikke fundet!");
         }
     });
 });
 
-// Standardtekst ved start
+// Sætter standardteksten ved start
 processTitle.textContent = "Se, hvordan Return Its kredsløb skaber bæredygtige løsninger";
 processDescription.textContent = "Klik på et ikon og følg hvert trin i genanvendelsesprocessen";
 
-// Fade-in-effekter for andre sektioner
+// Fade-in effekter for andre tekst-sektioner
+// Find alle elementer med klassen "fade-in" og observer, hvornår de bliver synlige i viewporten.
+// Når de kommer i syne, tilføjes klassen "animate" for at starte animationen.
 const fadeInElements = document.querySelectorAll('.fade-in');
 
+// Dette er en IntersectionObserver til at holde øje med elementer i viewporten
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate'); // Tilføj 'animate'-klassen
-      observer.unobserve(entry.target); // Stop observering efter animationen er kørt
+      // Tilføjer klassen "animate", når elementet er synligt
+      entry.target.classList.add('animate');
+      // Stopper observeringen for dette element, efter animationen er kørt
+      observer.unobserve(entry.target);
     }
   });
 });
 
+// Tilføjer observeren til alle fade-in elementer
+// Gennemgår alle elementer med klassen "fade-in" og sæter dem til at blive observeret af IntersectionObserver.
 fadeInElements.forEach(element => {
   observer.observe(element);
 });

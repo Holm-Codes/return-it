@@ -36,44 +36,33 @@ main {
 }
 
 .circle-header {
-  text-align: center; /* Centrer teksten horisontalt */
-  margin: 10px auto -10px; /* Øvre og nedre margin */
-  font-family: "railroad-gothic-atf", sans-serif; /* Font */
+  text-align: center; 
+  margin: 10px auto -10px; 
+  font-family: "railroad-gothic-atf", sans-serif; 
   font-weight: bold;
-  font-size: 40px; /* Skriftstørrelse */
-  color: #5C91A4; /* Blå farve */
-  text-transform: uppercase; /* Store bogstaver */
+  font-size: 40px; 
+  color: #5C91A4; 
+  text-transform: uppercase; 
   max-width: 550px;
-  line-height: 1; /* Gør linjeafstanden lidt pænere */
+  line-height: 1; 
 }
 
-/* Container centrerer cirklen */
+/* Container som centrerer cirklen */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateX(-50px); /* Juster -50px efter behov */
+  transform: translateX(-50px); 
 }
 
 .circle {
-  width: 600px; /* Din eksisterende cirkelstørrelse */
+  width: 600px; 
   height: 800px;
   position: relative; 
 }
 
-.circle::before {
-  content: "";
-  position: absolute;
-  width: 700px; /* Mindre end .circle for at give luft */
-  height: 720px; /* Samme som width for perfekt cirkel */
-  border: 2px dashed #999; /* Stiplet linje */
-  border-radius: 50%; /* Gør det cirkulært */
-  box-sizing: border-box; /* Sørger for korrekt beregning */
- 
-}
-
-/* Placering af ikoner i en cirkel */
+/* Placering af ikonerne cirkelært */
 .process-step {
   position: absolute;
   top: 45%;
@@ -85,13 +74,13 @@ main {
   transform-origin: center;
   transform: translate(-50%, -50%)
              rotate(calc(var(--angle) * 1deg))
-             translate(0, -350px) /* Beholder din afstand */
+             translate(0, -350px) 
              rotate(calc(-1 * var(--angle) * 1deg));
   transition: transform 0.5s;
 }
 
 .process-step img {
-  width: 100px; /* Beholder størrelsen */
+  width: 100px; 
   height: 100px;
   object-fit: contain;
   margin-bottom: 5px;
@@ -99,13 +88,13 @@ main {
 }
 
 .process-step img[src*="afhentning.webp"] {
-  width: 190px; /* Bevarer dine nuværende værdier */
+  width: 190px; 
   height: 120px;
   margin-bottom: -15px;
 }
 
 .process-step img[src*="vask_omsmeltning.webp"] {
-  width: 120px; /* Bevarer dine nuværende værdier */
+  width: 120px; 
   height: 100px;
 }
 
@@ -119,6 +108,14 @@ main {
   text-align: center;
 }
 
+/* 
+Tilføjer en hover-effekt til elementer med klassen "process-step". 
+Når brugeren holder musen over et ikon:
+Elementet forskydes og roteres tilbage til sin oprindelige vinkel for at bevare retningen.
+Elementet flyttes længere væk fra midten (fra -350px til -370px) for at skabe en hæve-effekt.
+Elementet skaleres op til 110% af sin oprindelige størrelse (scale(1.1)) for at fremhæve det.
+Overgangen sker glidende med en varighed på 0.5 sekunder.
+*/
 .process-step:hover {
   transform: translate(-50%, -50%)
              rotate(calc(var(--angle) * 1deg))
@@ -128,12 +125,17 @@ main {
   transition: transform 0.5s;
 }
 .process-step.active img {
-  transform: scale(1.2); /* Forstør billedet ved aktivt ikon */
-  transition: transform 0.5s; /* Glidende overgang */
+  transform: scale(1.2); /* Forstøre billedet ved det valgte ikon */
+  transition: transform 0.5s; /* Giver en glidende overgang */
   margin-bottom: 10px;
 }
+ 
+/* 
+"opacity: 1" gør elementet synligt som standard.
+En transition på 0.3 sekunder med "ease-in-out" sørger for en glidende overgang for ændringer
 
-/* Midtertekst som skal placeres over cirklen */
+Når klassen "fade" tilføjes, sættes "opacity" til 0, hvilket gør elementet usynligt (fade-out-effekt).
+*/
 .process-details {
   position: absolute;
   top: 50%;
@@ -144,7 +146,7 @@ main {
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.5;
-  opacity: 1; /* Start synlig */
+  opacity: 1; /* Starter synlig */
   transition: opacity 0.3s ease-in-out; /* Glidende overgang */
 }
 .process-details.fade {
@@ -159,21 +161,24 @@ main {
 }
 
 #process-description {
-  font-family: Verdana, sans-serif;;
-  margin: 10px 0 0; /* Luft mellem overskrift og tekst */
-  font-size: 25px;
+  font-family: "richmond-text", sans-serif;
+  margin: 10px 0 0; 
   line-height: 1.5;
-  color: #173A24; /* Mørkere farve for bedre kontrast */
+  color: #173A24;
+  font-size: 20px; 
 }
 
-
-/* Skjul alle pile som standard */
+/* 
+Skjuler alle pile som standard og sørger for, at de kun bliver synlige, når klassen "active" tilføjes. 
+Pilen placeres, roteres og flyttes væk fra midten ved hjælp af "transform". 
+En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
+*/
 .pil {
-  display: none; /* Skjult som standard */
+  display: none; 
   position: absolute;
   width: 90px;
   height: 90px;
-  background-image: url('../images/pil.webp'); /* Udskift med din sti */
+  background-image: url('../images/pil.webp'); 
   background-size: contain;
   background-repeat: no-repeat;
   top: 42%;
@@ -192,7 +197,7 @@ main {
 
 .process-tekst-knap {
   text-align: center; /* Centrerer alt */
-  color: #173A24; /* Grøn tekstfarve */
+  color: #173A24; 
   margin-top: -70px;
   margin-bottom: 50px;
 }
@@ -200,21 +205,20 @@ main {
 .process-tekst-knap h3 {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 50px; /* Luft mellem h3 og knappen */
+  margin-bottom: 50px; 
 }
 
 .process-tekst-knap .button {
 display: inline-block;
 font-family: "railroad-gothic-atf", sans-serif;
-padding: 25px 35px; /* Størrelse på knappen */
+padding: 25px 35px; 
 background-color: #5C91A4;
 color: #ffffff;
-border-radius: 50px; /* Runde kanter */
+border-radius: 50px; 
 text-decoration: none;
 font-size: 20px;
 transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .process-tekst-knap .button {
   margin-left: -10px;
@@ -226,33 +230,32 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 .fade-in {
-  opacity: 0; /* Start som usynlig */
-  transform: translateY(50px); /* Start nedefra */
+  opacity: 0; 
+  transform: translateY(50px); 
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.animate {
-  opacity: 1; /* Bliv synlig */
-  transform: translateY(0); /* Flyt til den oprindelige position */
+  opacity: 1; 
+  transform: translateY(0); 
 }
 .bundsektion {
   width: 100%;
-  height: 2500px; /* Juster højden efter behov */
-  background-image: url('../images/baggrund_bundsektion.webp'); /* sti til baggrundsbillede */
-  background-size: cover; /* Sørger for, at billedet dækker hele sektionen */
+  height: 2700px; 
+  background-image: url('../images/baggrund_bundsektion.webp'); 
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: top center; /* Placer billedet øverst og centreret */
+  background-position: top center; 
 }
 
 .bundsektion-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Beholder overskrift øverst */
+  flex-direction: column; 
   gap: 50px;
 }
 
-/* Overskrift og underrubrik */
 .bundsektion-øverste-content {
   text-align: center;
   padding-top: 200px;
@@ -271,28 +274,32 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   line-height: 1.6;
 }
 
-/* Flex container for grafik og tekst */
 .bundsektion-content {
-  display: flex; /* Aktiver Flexbox */
-  flex-direction: row; /* Sørger for vandret layout */
-  align-items: flex-start; /* Topjuster indholdet */
-  gap: 100px; /* Luft mellem venstre og højre sektion */
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-start; 
+  gap: 100px; 
 }
 
 .grafik-billeder {
   display: flex;
   flex-direction: column;
-  gap: 200px; /* Luft mellem billederne */
-  margin: 0 auto; /* Centrer containeren */
+  gap: 200px; 
+  margin: 0 auto; 
   margin-top: 60px;
 }
 
 .grafik-billeder img {
-  height: auto; /* Bevar proportionerne */
+  height: auto; /* Bevare proportionerne */
 }
 
-
-/* Animation til begge elementer */
+/* 
+Tilføjer en op-og-ned animation til elementer med klassen "animated-element". 
+Animationen varer 2 sekunder, kører uendeligt og skifter retning ved hver gentagelse. 
+".bestik" starter animationen med det samme (ingen forsinkelse).
+".champagneglas" har en forsinkelse på 1 sekund for at skabe en forskudt effekt.
+Keyframes "moveUpAndDown" styrer bevægelsen, hvor elementet flyttes 10px op og ned
+*/
 .animated-element {
   animation: moveUpAndDown 2s ease-in-out infinite alternate;
 }
@@ -305,7 +312,7 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   animation-delay: 0s; /* Starter med det samme */
 }
 
-/* Champagneglas: Forsinkelse */
+/* Champagneglas: Kort forsinkelse */
 .champagneglas {
   max-width: 450px;
   height: auto;
@@ -325,8 +332,8 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 .mellemrubrik-wrapper {
-  max-width: 550px; /* Begræns tekstens bredde */
-  margin-left: auto; /* Skubber teksten mod højre */
+  max-width: 550px; 
+  margin-left: auto; 
   padding: 5px;
 }
 
@@ -343,15 +350,16 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 .nederste-mellemrubrik {
-  margin-top: 60px;
+  margin-top: 100px;
   font-size: 20px;
   color: #FFFFFF;
   line-height: 1.5;
 }
 
 .nederste-mellemrubrik ul {
-  margin-top: -20px; /* Juster denne værdi til ønsket afstand */
-  padding-left: 20px; /* Bevarer plads til bullets */
+  margin-top: -20px; 
+  padding-left: 20px; 
+  font-family: "richmond-text", sans-serif;
 }
 
 .slut-overskrift {
@@ -368,13 +376,13 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
 .bundsektion-sluttekst .button {
   display: block;
   margin: 0 auto;
-  width: fit-content; /* Tilpasser bredden til indholdet */
+  width: fit-content; 
   margin-top: 100px;
   font-family: "railroad-gothic-atf", sans-serif;
-  padding: 25px 35px; /* Størrelse på knappen */
+  padding: 25px 35px;
   background-color: #BEE3E7;
   color: #173A24;
-  border-radius: 50px; /* Runde kanter */
+  border-radius: 50px; 
   text-decoration: none;
   font-size: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
