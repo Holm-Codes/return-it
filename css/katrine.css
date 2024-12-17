@@ -1,3 +1,9 @@
+/**
+ * file: css/css.css
+ * purpose: styling
+ **/
+
+/* Define variables in the :root */
 :root {
   --backgr: #FFFFFF;
   --text: #161616;
@@ -6,108 +12,196 @@
   --logogreen: #29633B;
   --darkblue: #5C91A4;
   --lightblue: #BEE3E7;
-  --button-color: #5C91A4;
-  --button-hover-color: #29633B;
 }
 
-/* Generelle skrifttyper */
 h1, h2 {
   font-family: "railroad-gothic-atf", sans-serif;
   font-weight: 600;
+  font-style: normal;
 }
 
-h3, h4, h5, h6, p {
+h3, h4, h5, h6 {
   font-family: Verdana, sans-serif;
-  color: var(--text);
 }
 
-/* Main styling */
+p {
+  font-family: "richmond-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 main {
   color: var(--text);
   background-color: var(--backgr);
 }
 
-/* Container og cirkel */
+.circle-header {
+  text-align: center; /* Centrer teksten horisontalt */
+  margin: 10px auto -90px; /* Øvre og nedre margin */
+  font-family: "railroad-gothic-atf", sans-serif; /* Font */
+  font-weight: bold;
+  font-size: 40px; /* Skriftstørrelse */
+  color: #5C91A4; /* Blå farve */
+  text-transform: uppercase; /* Store bogstaver */
+  max-width: 550px;
+  line-height: 1; /* Gør linjeafstanden lidt pænere */
+}
+/* Container centrerer cirklen */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateX(-50px); /* Flyt cirklen lidt til venstre */
+  transform: translateX(-50px); /* Juster -50px efter behov */
 }
 
 .circle {
-  position: relative;
-  width: 600px;
+  width: 600px; /* Din eksisterende cirkelstørrelse */
   height: 800px;
+  position: relative; 
 }
 
 .circle::before {
   content: "";
   position: absolute;
-  width: 700px;
-  height: 700px;
-  border: 2px dashed #999;
-  border-radius: 50%;
+  width: 700px; /* Mindre end .circle for at give luft */
+  height: 720px; /* Samme som width for perfekt cirkel */
+  border: 2px dashed #999; /* Stiplet linje */
+  border-radius: 50%; /* Gør det cirkulært */
+  box-sizing: border-box; /* Sørger for korrekt beregning */
+ 
 }
 
-/* Process Step (Ikoner i cirklen) */
+/* Placering af ikoner i en cirkel */
 .process-step {
   position: absolute;
   top: 45%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg))
-             translate(0, -350px) rotate(calc(-1 * var(--angle) * 1deg));
-  transition: transform 0.3s ease;
+  transform-origin: center;
+  transform: translate(-50%, -50%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -350px) /* Beholder din afstand */
+             rotate(calc(-1 * var(--angle) * 1deg));
+  transition: transform 0.5s;
 }
 
 .process-step img {
-  width: 100px;
+  width: 100px; /* Beholder størrelsen */
   height: 100px;
   object-fit: contain;
+  margin-bottom: 5px;
+
 }
 
-.process-step:hover {
-  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg))
-             translate(0, -350px) rotate(calc(-1 * var(--angle) * 1deg))
-             scale(1.1);
+.process-step img[src*="afhentning.webp"] {
+  width: 190px; /* Bevarer dine nuværende værdier */
+  height: 120px;
+  margin-bottom: -15px;
+}
+
+.process-step img[src*="vask_omsmeltning.webp"] {
+  width: 120px; /* Bevarer dine nuværende værdier */
+  height: 100px;
 }
 
 .process-step figcaption {
-  margin-top: 5px;
-  font-weight: bold;
-  color: var(--darkgreen);
+  margin-top: 0px;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #173A24;
+  font-weight: bolder;
+  line-height: 1.2;
+  text-align: center;
 }
 
-/* Process Details (Midtertekst) */
+.process-step:hover {
+  transform: translate(-50%, -50%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -370px)
+             rotate(calc(-1 * var(--angle) * 1deg))
+             scale(1.1); /* Hover-effekt */
+  transition: transform 0.5s;
+}
+.process-step.active img {
+  transform: scale(1.2); /* Forstør billedet ved aktivt ikon */
+  transition: transform 0.5s; /* Glidende overgang */
+  margin-bottom: 10px;
+}
+
+/* Midtertekst som skal placeres over cirklen */
 .process-details {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -70%);
   text-align: center;
+  color: #173A24;
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.5;
 }
 
-.process-details h3 {
+
+#process-title {
+  font-family: Verdana, sans-serif;
+  margin: 0;
   font-size: 30px;
   font-weight: bold;
-  margin: 0;
 }
 
-.process-details p {
+#process-description {
+  font-family: Verdana, sans-serif;;
+  margin: 10px 0 0; /* Luft mellem overskrift og tekst */
   font-size: 25px;
-  margin-top: 10px;
-  color: #333;
+  line-height: 1.5;
+  color: #173A24; /* Mørkere farve for bedre kontrast */
 }
 
-/* Tekst og knap under cirklen */
+
+
+
+/* Skjul alle pile som standard */
+.pil {
+  display: none; /* Skjult som standard */
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-image: url('../images/pil.webp'); /* Udskift med din sti */
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 42%;
+  left: 51.6%;
+  transform-origin: center bottom;
+  transform: translate(-42%, -51.6%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -295px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Når pilen har "active"-klassen, vises den */
+.pil.active {
+  display: block; /* Gør pilen synlig */
+}
+
+
+
+
+
+
+
 .process-tekst-knap {
-  text-align: center;
-  margin-top: -130px; /* Justér afstand fra cirklen */
+  text-align: center; /* Centrerer alt */
+  margin-top: -180px; /* Afstand fra cirklen */
+  color: #173A24; /* Grøn tekstfarve */
+}
+
+.process-tekst-knap h3,
+.process-tekst-knap .button {
+  margin: 20px auto; /* Centrerer og giver lidt luft */
 }
 
 .process-tekst-knap h3 {
@@ -117,20 +211,20 @@ main {
 
 .process-tekst-knap .button {
   display: inline-block;
-  padding: 20px 25px;
-  background-color: var(--button-color);
-  color: #FFFFFF;
-  border-radius: 50px;
+  font-family: "railroad-gothic-atf", sans-serif;
+  padding: 25px 25px;
+  background-color: #5C91A4; /* Blå farve */
+  color: #FFFFFF; /* Hvid tekst */
+  border-radius: 50px; /* Runde kanter */
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bolder;
   font-size: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .process-tekst-knap .button:hover {
-  transform: scale(1.05); /* Lidt større knap ved hover */
-  background-color: var(--button-hover-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Skygge ved hover */
+  transform: scale(1.05);
+  background-color: #29633B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
