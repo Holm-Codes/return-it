@@ -189,6 +189,7 @@
 
 .ikon-container-tekst{
   margin-top: -30px;
+  
 }
 
 .hvorfor-returnit-ikoner{
@@ -205,3 +206,26 @@
 }
 
 /* Hvorfor Return It sektion styling slut */
+
+
+.data-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.data-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  
+}
+
+.data-text{
+  text-align: center;
+  z-index: 10;
+}
