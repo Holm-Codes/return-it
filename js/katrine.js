@@ -87,7 +87,7 @@ steps.forEach((step, index) => {
 });
 
 // Sætter standardteksten ved start
-processTitle.textContent = "Se, hvordan Return Its kredsløb skaber bæredygtige løsninger";
+processTitle.textContent = "Sådan sikrer Return It en bæredygtig emballageløsning for dig";
 processDescription.textContent = "Klik på et ikon og følg hvert trin i genanvendelsesprocessen";
 
 // Fade-in effekter for andre tekst-sektioner
