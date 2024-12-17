@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/ldi6aeu.css">
   <link rel="stylesheet" href="https://use.typekit.net/ldi6aeu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Burger menu ikon-->
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  
   <script src="js/js.js"></script>
 </head>
 <body>
@@ -25,11 +27,11 @@
             <span></span>
         </div>
         <ul class="menu">
-            <li data-target="#section1">Hjem</li>
-            <li data-target="#section2">Hvorfor Return It</li>
-            <li data-target="#section3">Return Its Proces</li>
-            <li data-target="#section4">Return It i tal</li>
-            <li data-target="#section5">Genbrug vs. Genanvendelse</li>
+            <li><a href="#section1">Hjem</a></li>
+            <li><a href="#section2">Hvorfor Return It</a></li>
+            <li><a href="#section3">Return Its Proces</a></li>
+            <li><a href="#section4">Return It i tal</a></li>
+            <li><a href="#section5">Genbrug vs. Genanvendelse</a></li>
         </ul>
       </nav>
   </div>
@@ -39,8 +41,8 @@
 <!--Return It Hero HTML Start-->
     <section id="section1"></section>
       <div class="hero-intro">
-        <video class="hero-video">
-
+        <video autoplay muted loop id="hero-video">
+          <source src="media/hero-video.mp4" type="video/mp4">
         </video>
         <h1>
           <span id="titel">Return It</span>
@@ -127,6 +129,52 @@
 <!--Return It i tal HTML Start-->
     <section id="section4">
 
+      <div class="data-container">
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/3e1b7c43-2772-4983-84b0-d6016f09e5f0/OSfgojEyJq.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Enheder indsamlet og genanvendt
+            </h4>
+            <p>
+              Antal, kopper, tallerkner, etc., der er indsamlet og genanvendt
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/93bf8560-7143-43e2-b67a-2ca824f5c9ab/ofA09HcUdt.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Mindre emballage spild
+            </h4>
+            <p>
+              Samlet emballagespild sparet  med Return Its samlede emballage løsning 
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/52b345dc-e141-4846-8687-60b6bc1ae591/ky5YlEX0vi.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Festivaler og events betjent
+            </h4>
+            <p>
+              Antal events, hvor Return It har leveret bæredygtige løsninger
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/06545d41-bece-48ed-bbbb-86ed5c66d673/ULZfkCmnei.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Lukket kredsløb
+            </h4>
+            <p>
+              Alt emballage indsamles, smeltes og genanvendes i et fuldt cirkulært system.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 <!--Return It i tal HTML Slut-->
 
