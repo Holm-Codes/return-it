@@ -165,6 +165,7 @@ section {
 .hero-video {
   object-fit: cover; /* Sørger for at videoen dækker hele containeren uden at blive forvrænget */
   object-position: center center; /* Centrerer videoen */
+  max-width: 100%;
 }
 
 .hero-intro{
