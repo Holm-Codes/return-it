@@ -51,6 +51,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
 }
 
 .menu-placement{
@@ -147,6 +148,11 @@ section {
 
 /* Hero styling start */
 
+#hero-video{
+  height: 50vh;
+  width: 1000px;
+}
+
 .hero-intro{
   display: flex;
   flex-direction: column;
@@ -240,8 +246,6 @@ section {
   justify-content: space-between;
   margin-left: 150px;
   margin-right: 150px;
-  
-
 }
 
 .data-section{
