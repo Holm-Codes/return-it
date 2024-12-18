@@ -268,6 +268,13 @@ section {
 
 /* Hvorfor Return It sektion styling slut */
 
+#divider{
+  display: flex;
+  width: 100%;
+  margin-bottom: 100px;
+  margin-top: -60px;
+}
+
 /* Infografik styling start */
 
 #section3{
@@ -381,7 +388,7 @@ Når klassen "fade" tilføjes, sættes "opacity" til 0, hvilket gør elementet u
 */
 .process-details {
   position: absolute;
-  top: 177%;
+  top: 192%;
   left: 52%;
   transform: translate(-50%, -50%);
   text-align: center;
