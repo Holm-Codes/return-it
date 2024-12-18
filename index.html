@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Burger menu ikon-->
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   
-  <script src="js/js.js"></script>
+  <script src="js/burgermenu.js"></script>
+  <script src="js/infografik.js"></script>
 </head>
 <body>
   <header class="header">
@@ -123,15 +124,82 @@
       </div>
     </section>
 <!--Hvorfor Return It HTML Slut-->
+<!--Infografik Start-->
 
-<!--Return Its Proces HTML Start - KATRINE-->
     <section id="section3">
+      <!-- Overskrift over cirklen -->
+      <div class="circle-header">
+        RETURN IT TAGER SIG AF HELE GENANVENDELSESPROCESSEN
+      </div>
 
+      <!-- Container til cirklen af ikoner og pile inklusiv deres placering/vinkler-->
+      <div class="container">
+        <!-- Ikoner og pile -->
+        <figure class="process-step" style="--angle: 0;">
+          <img src="images/forhandling.webp" alt="Indledende Samtale">
+          <figcaption>Indledende Samtale</figcaption>
+        </figure>
+        <div class="pil" id="pil-0" style="--angle: 26.5;"></div>
+
+        <figure class="process-step" style="--angle: 45;">
+          <img src="images/produktion.webp" alt="Produktion">
+          <figcaption>Produktion</figcaption>
+        </figure>
+        <div class="pil" id="pil-1" style="--angle: 70.5;"></div>
+
+        <figure class="process-step" style="--angle: 90;">
+          <img src="images/levering.webp" alt="Levering">
+          <figcaption>Levering</figcaption>
+        </figure>
+        <div class="pil" id="pil-2" style="--angle: 114.5;"></div>
+
+        <figure class="process-step" style="--angle: 135;">
+          <img src="images/emballage.webp" alt="Brug af emballage">
+          <figcaption>Brug af emballage</figcaption>
+        </figure>
+        <div class="pil" id="pil-3" style="--angle: 162.5;"></div>
+
+        <figure class="process-step" style="--angle: 180;">
+          <img src="images/indsamling.webp" alt="Indsamling">
+          <figcaption>Indsamling</figcaption>
+        </figure>
+        <div class="pil" id="pil-4" style="--angle: 198.5;"></div>
+
+        <figure class="process-step" style="--angle: 225;">
+          <img src="images/afhentning.webp" alt="Afhentning">
+          <figcaption>Afhentning</figcaption>
+        </figure>
+        <div class="pil" id="pil-5" style="--angle: 247.5;"></div>
+
+        <figure class="process-step" style="--angle: 270;">
+          <img src="images/vask_omsmeltning.webp" alt="Vask og omsmeltning">
+          <figcaption>Vask og omsmeltning</figcaption>
+        </figure>
+        <div class="pil" id="pil-6" style="--angle: 291.5;"></div>
+
+        <figure class="process-step" style="--angle: 315;">
+          <img src="images/ny_emballage.webp" alt="Klar til ny emballage">
+          <figcaption>Klar til ny emballage</figcaption>
+        </figure>
+        <div class="pil" id="pil-7" style="--angle: 337.5;"></div>
+      </div>
+
+      <!-- Infografik start-tekst -->
+      <div class="process-details">
+        <h3 id="process-title">Se, hvordan Return Its kredsløb skaber bæredygtige løsninger</h3>
+        <p id="process-description">Klik på et ikon og følg hvert trin i genanvendelsesprocessen</p>
+      </div>
+
+      <!-- Tekst og CTA-knap under cirklen -->
+      <div class="process-tekst-knap">
+        <h3>Vil du vide, hvordan Return It kan gøre dit event grønnere og mere effektivt?</h3>
+        <a href="#kontakt" class="button">KONTAKT OS HER</a>
+      </div>
     </section>
-<!--Return Its Proces HTML Slut - KATRINE-->
+<!--Infografik Slut-->
+
 <!--Return It i tal HTML Start-->
     <section id="section4">
-
       <div class="data-container">
         <div class="data-section">
           <dotlottie-player src="https://lottie.host/3e1b7c43-2772-4983-84b0-d6016f09e5f0/OSfgojEyJq.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
@@ -183,8 +251,63 @@
 
 <!--Genbrug vs. Genanvendelse HTML Start - KATRINE-->
     <section id="section5">
-
+      <section class="bundsektion">
+        <div class="bundsektion-wrapper">
+    
+            <!-- Overskrift og underrubrik -->
+            <div class="bundsektion-øverste-content">
+                <h2 class="overskrift-bundsektion" class="fade-in">GENBRUG VS. GENANVENDELSE</h2>
+                <p class="underrubrik" class="fade-in">
+                    Når det kommer til at skabe en mere bæredygtig fremtid, bliver begreber som genbrug og genanvendelse ofte brugt i flæng. 
+                    Men der er markante forskelle mellem de to metoder – forskelle, som har betydning for vores klimaaftryk og ressourceforbrug. 
+                    Hos Return It fokuserer vi på genanvendelse af PP-plast som en nøgleteknologi til at minimere affald og fremme cirkulær økonomi. 
+                    Her forklarer vi, hvorfor genanvendelse ofte har fordele, som genbrug ikke kan tilbyde.
+                </p>
+            </div>
+    
+            <!-- Flex container med grafik-billeder-->
+            <div class="bundsektion-content">
+                <div class="grafik-billeder">
+                    <img class="bestik animated-element" src="images/bestik.webp" alt="Kniv og gaffel">
+                    <img class="champagneglas animated-element" src="images/champagneglas.webp" alt="Champagneglas">
+                </div>
+                <!-- mellemrubrik-wrapper -->
+                <div class="mellemrubrik-wrapper">
+                    <h3 class="mellemrubrik" class="fade-in">Fordele ved genanvendelse</h3>
+                    <p class="fade-in">1. Hygiejne og sikkerhed<br>
+                        Genanvendelse sikrer, at materialer, som PP-plast, kan genbruges uden risiko for kontaminering. For eksempel er det afgørende for emballage, der anvendes til mad og drikkevarer, at hygiejnestandarder overholdes. Ved at smelte og genanvende plasten kan eventuelle rester af bakterier eller andre forureninger elimineres.
+                    </p>
+                    <p class="fade-in">2. Effektiv ressourceudnyttelse<br>
+                        Hvor genbrug ofte kræver, at produkter transporteres, rengøres og lagres, kan genanvendelse optimere ressourceforbruget ved at reducere kompleksiteten i logistikken. Hos ReturnIt samarbejder vi med partnere for at sikre, at PP-plast bliver samlet, transporteret og genanvendt på en effektiv måde, der mindsker CO2-udledningen.
+                    </p>
+                    <p class="fade-in">3. Fleksibilitet i materialeanvendelse<br>
+                        Genanvendelse giver mulighed for at transformere materialet til nye produkter tilpasset forskellige behov. For eksempel kan genanvendt PP-plast bruges til at fremstille nye emballager til fremtidige festivaler og events, hvilket bidrager til en cirkulær økonomi.
+                    </p>
+                    <p class="fade-in">4. Reduktion af affaldsmængder<br>
+                        Produkter designet til genbrug har en begrænset levetid, og når de ikke længere kan bruges, ender de ofte som affald. Genanvendelse sikrer, at selv udtjente produkter kan finde nyt liv og forhindrer, at materialer ender på lossepladsen.
+                    </p>
+                        <div class="nederste-mellemrubrik" class="fade-in">
+                            <p>Hvorfor er PP-plast bæredygtigt?<br>
+                            PP-plast (polypropylen) er et populært materiale i emballageindustrien på grund af dets holdbarhed, lette vægt og genanvendelighed. Her er nogle af de grunde til, at det er et bæredygtigt valg:
+                            </p>
+                            <ul>
+                                <li>Lav CO2-udledning: Produktion og genanvendelse af PP-plast udleder markant mindre CO2 sammenlignet med mange andre materialer.</li>
+                                <li>Lang levetid: PP-plast er robust og kan genanvendes mange gange uden at miste sine grundlæggende egenskaber.</li>
+                                <li>Cirkulær økonomi:Ved at genanvende PP-plast sikrer vi, at materialet forbliver i kredsløbet og ikke ender som affald.</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        <div class="bundsektion-sluttekst">
+            <h3 class="slut-overskrift fade-in">Return Its løsning: En samlet tilgang til genanvendelse</h3>
+            <p class="slut-tekst fade-in">
+                Hos Return It tilbyder vi en helhedsorienteret genanvendelsesløsning, der dækker hele processen – fra produktion, levering, indsamling og transport til genanvendelse og produktion af nye produkter. 
+                Vores løsning optimerer ressourceforbruget, reducerer CO2-udledningen og sikrer, at ingen emballage går til spilde.
+            </p>
+            <a href="#kontakt" class="button">KONTAKT OS HER</a>
+        </div>
     </section>
+  </section>
 <!--Genbrug vs. Genanvendelse HTML Slut - KATRINE-->
   </main>
 <!--Footer Start-->

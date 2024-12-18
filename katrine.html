@@ -8,10 +8,121 @@
   <link rel="stylesheet" href="css/katrine.css">
   <link rel="stylesheet" href="https://use.typekit.net/ldi6aeu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
-  <header></header>
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Return Its logo">
+    </a>
+    <div class="menu-placement">
+      <img src="images/sprog.png" alt="sprog filter" id="sprog">
+      <nav>
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="#section1">Hjem</a></li>
+            <li><a href="#section2">Hvorfor Return It</a></li>
+            <li><a href="#section3">Return Its Proces</a></li>
+            <li><a href="#section4">Return It i tal</a></li>
+            <li><a href="#section5">Genbrug vs. Genanvendelse</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main>
+    
+    <!--Return It Hero HTML Start-->
+    <section id="section1">
+      <div class="hero-intro">
+        <div class="video-container">
+          <video autoplay muted loop class="hero-video">
+            <source src="media/herovideo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero-text">
+          <h1>
+            <span id="titel">Return It</span>
+          </h1>
+          <h3>
+            Bæredygtige Emballageløsninger til dit event
+          </h3>
+          <button class="button1">Book et møde her</button>
+        </div>
+      </div>
+    </section>
+<!--Return It Hero HTML Slut-->
+
+<!--Hvorfor Return It HTML Start-->
+<section id="section2">
+  <div class="hvorfor-returnit-container">
+    <div class="hvorfor-returnit-intro">
+      <h3 id="hvorfor-returnit-titel">
+        Velkommen til Return It
+      </h3>
+      <p>
+        Vi skaber bæredygtige emballageløsninger, der gør det nemt for festivaler og events at tage ansvar for miljøet. Return It
+        står for hele processen – fra produktion, levering og indsamling til vask og genanvendelse – så jeres event kan mindske
+        emballagespild og CO₂-aftryk. Sammen arbejder vi mod en fremtid uden unødvendigt affald.
+      </p>
+    </div>
+    <div class="hvorfor-returnit-ikoner">
+      <div class="ikon-container">
+        <img src="images/hvorfor-returnit-ikon1.png"  alt="Ikon a plante"  class="hvorfor-returnit-img"> <!--INDSÆT BILLEDE-->
+        <h5>
+          Grønnere Valg
+        </h5>
+        <div class="ikon-container-tekst">
+          <p>
+            Reducerer affald og mindsker behovet for nye råmateraler
+          </p>
+        </div>
+      </div>
+      <div class="ikon-container">
+        <img src="images/hvorfor-returnit-ikon2.png" alt="Ikon af en graf" class="hvorfor-returnit-img"> <!--INDSÆT BILLEDE-->
+        <h5>
+          Målbar Bæredygtighed
+        </h5>
+        <div class="ikon-container-tekst">
+          <p>
+            Vi måler og dokumenterer genanvendelse, så festivaler kan rapportere deres bæredygtige
+            indsats med gennemsigtighed
+          </p>
+        </div>
+      </div>
+      <div class="ikon-container">
+        <img src="images/hvorfor-returnit-ikon3.png" alt="Ikon af genanvendelses tegn" class="hvorfor-returnit-img"> <!--INDSÆT BILLEDE-->
+        <h5>
+          Cirkulær Løsning
+        </h5>
+        <div class="ikon-container-tekst">
+          <p>
+            Return It sikrer en cirkulær genanvendelsesproces ved at håndtere hele processen fra 
+            start til slut
+          </p>
+        </div>
+      </div>
+      <div class="ikon-container">
+        <img src="images/hvorfor-returnit-ikon4.png" alt="Ikon af personer der danser" class="hvorfor-returnit-img"> <!--INDSÆT BILLEDE-->
+        <h5>
+          Øget Bevidsthed
+        </h5>
+        <div class="ikon-container-tekst">
+          <p>
+            Fremmer en kultur af genbrug og ansvarlighed blandt festivaldeltagere
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Hvorfor Return It HTML Slut-->
+
+<!--Infografik Start-->
+  <section id="section3">
     <!-- Overskrift over cirklen -->
     <div class="circle-header">
       RETURN IT TAGER SIG AF HELE GENANVENDELSESPROCESSEN
@@ -80,7 +191,61 @@
       <h3>Vil du vide, hvordan Return It kan gøre dit event grønnere og mere effektivt?</h3>
       <a href="#kontakt" class="button">KONTAKT OS HER</a>
     </div>
+  </section>
+    <!--Infografik Slut-->
 
+    <!--Return It i tal HTML Start-->
+    <section id="section4">
+      <div class="data-container">
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/3e1b7c43-2772-4983-84b0-d6016f09e5f0/OSfgojEyJq.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Enheder indsamlet og genanvendt
+            </h4>
+            <p>
+              Antal, kopper, tallerkner, etc., der er indsamlet og genanvendt
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/93bf8560-7143-43e2-b67a-2ca824f5c9ab/ofA09HcUdt.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Mindre emballage spild
+            </h4>
+            <p>
+              Samlet emballagespild sparet  med Return Its samlede emballage løsning 
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/52b345dc-e141-4846-8687-60b6bc1ae591/ky5YlEX0vi.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Festivaler og events betjent
+            </h4>
+            <p>
+              Antal events, hvor Return It har leveret bæredygtige løsninger
+            </p>
+          </div>
+        </div>
+        <div class="data-section">
+          <dotlottie-player src="https://lottie.host/06545d41-bece-48ed-bbbb-86ed5c66d673/ULZfkCmnei.lottie" background="transparent" speed="1" style="width: 200px; height: auto; margin-bottom: -80px;" autoplay></dotlottie-player>
+          <div class="data-text">
+            <h4>
+              Lukket kredsløb
+            </h4>
+            <p>
+              Alt emballage indsamles, smeltes og genanvendes i et fuldt cirkulært system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+<!--Return It i tal HTML Slut-->
+
+<!--Genbrug vs. Genanvendelse HTML Start-->
     <section class="bundsektion">
         <div class="bundsektion-wrapper">
     
@@ -137,9 +302,11 @@
             <a href="#kontakt" class="button">KONTAKT OS HER</a>
         </div>
     </section>
+    <!--Genbrug vs. Genanvendelse HTML slut-->
   </main>
 
   <!-- Link til JavaScript-filen -->
-  <script src="js/katrine.js"></script>
+  <script src="js/infografik.js"></script>
+  <script src="js/burgermenu.js"></script>
 </body>
 </html>

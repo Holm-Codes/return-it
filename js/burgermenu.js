@@ -4,7 +4,7 @@
  **/
 "use strict";
 
-console.log('Success: JavaScript from js/js.js running!')
+console.log('Success: JavaScript from js/burgermenu.js running!')
 
 document.addEventListener('DOMContentLoaded', () => {
     const burgerMenu = document.querySelector('.burger-menu'); // Hent burger-menu ikonet (de tre horisontale streger)
