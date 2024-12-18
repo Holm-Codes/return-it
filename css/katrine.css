@@ -52,6 +52,9 @@ body{
   align-items: center;/* Centrerer elementerne vertikalt */
   background: transparent; /* Gør baggrunden transparent */
   background-color: transparent; /* Baggrundsfarven er transparent */
+  position:fixed;
+  z-index: 100;
+  width:100%;
 }
 
 .menu-placement{
@@ -149,21 +152,21 @@ section {
 /* Hero styling start */
 
 #section1{
-  height: 45vh; /* Sætter højden på hero sektionen */
+  height: 50vh; /* Sætter højden på hero sektionen */
   display: flex; /* Brug flexbox til at arrangere indholdet */
 }
 
 .video-container {
   width: auto; /* Automatisk bredde */
-  height: 50vh; /* Sætter højden på video containeren */
   overflow: hidden; /* Skjuler overskydende del af videoen */
   position: relative; /* For at kunne bruge positionering i containeren */
+  display: flex;
 }
 
 .hero-video {
   object-fit: cover; /* Sørger for at videoen dækker hele containeren uden at blive forvrænget */
   object-position: center center; /* Centrerer videoen */
-  max-width: 100%;
+  width: 100%;
 }
 
 .hero-intro{
@@ -174,16 +177,9 @@ section {
 }
 
 .hero-text{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: absolute; /* Positionerer teksten så den ikke rykker sig i forhold til containeren */
-  top: 50%; /* Centrerer teksten vertikalt */
-  left: 50%; /* Centrerer teksten horisontalt */
-  transform: translate(-50%, -50%); /* Justerer teksten korrekt */
-  margin-top: -100px; /* Justerer lidt på teksten */
-  color: var(--backgr); /* Sætter tekstfarven */
+  color: white;
+  text-align:center;
 }
 
 #titel{
@@ -216,29 +212,28 @@ section {
 /* Hvorfor Return It sektion styling start */
 
 #section2{
-  height: 50vh; /* Sætter højden på sektionen */
+  height: 60vh; /* Sætter højden på sektionen */
   margin-bottom: 100px;
 }
 
 .hvorfor-returnit-container{
-
-  margin-left: 150px; /* Margin til venstre */
-  margin-right: 150px; /* Margin til højre */
+  width:100%;
+  margin:auto;
 }
 
 .hvorfor-returnit-intro{
-  margin-left: 150px;
-  margin-right: 150px;
   margin-bottom: 50px; /* Margin nederst */
-  text-align: center; /* Centrerer teksten */
+  margin:auto;
+  text-align: center;
+  width:750px;
 }
 
 #hvorfor-returnit-titel{
   font-family: "railroad-gothic-atf", sans-serif;
   font-size: 40px;
   color: var(--darkblue);
-  margin-top: 25px;
-  margin-bottom: -10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .ikon-container{
@@ -250,7 +245,9 @@ section {
 }
 
 .ikon-container-tekst{
-  margin-top: -30px; /* Justerer teksten i forhold til ikonerne */
+  margin-top: -10px;
+  text-align: center;
+  width: 210px;
 }
 
 .hvorfor-returnit-ikoner{
@@ -258,7 +255,9 @@ section {
   flex-direction: row;
   align-items: baseline;
   justify-content: space-around; /* Fordeler ikonerne */
-  margin-top: -30px; /* Justerer placeringen af ikonerne */
+  width:910px;
+  margin:auto;
+  margin-top: 35px;
 }
 
 .hvorfor-returnit-img{
@@ -292,9 +291,8 @@ flex-direction: column;
   text-transform: uppercase; 
   max-width: 550px;
   line-height: 1; 
-  margin-bottom: 420px;
+  margin-bottom: 355px;
   margin-top: -50px ;
-  margin-left: 507px;
 }
 
 /* Container som centrerer cirklen */
@@ -324,14 +322,14 @@ flex-direction: column;
   transform-origin: center;
   transform: translate(-50%, -50%)
              rotate(calc(var(--angle) * 1deg))
-             translate(0, -350px) 
+             translate(0, -300px) 
              rotate(calc(-1 * var(--angle) * 1deg));
   transition: transform 0.5s;
 }
 
 .process-step img {
-  width: 100px; 
-  height: 100px;
+  width: 80px; 
+  height: 80px;
   object-fit: contain;
   margin-bottom: 5px;
 
@@ -369,7 +367,7 @@ Overgangen sker glidende med en varighed på 0.5 sekunder.
 .process-step:hover {
   transform: translate(-50%, -50%)
              rotate(calc(var(--angle) * 1deg))
-             translate(0, -370px)
+             translate(0, -320px)
              rotate(calc(-1 * var(--angle) * 1deg))
              scale(1.1); /* Hover-effekt */
   transition: transform 0.5s;
@@ -388,7 +386,7 @@ Når klassen "fade" tilføjes, sættes "opacity" til 0, hvilket gør elementet u
 */
 .process-details {
   position: absolute;
-  top: 192%;
+  top: 185%;
   left: 52%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -426,8 +424,8 @@ En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
 .pil {
   display: none; 
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   background-image: url('../images/pil.webp'); 
   background-size: contain;
   background-repeat: no-repeat;
@@ -436,7 +434,7 @@ En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
   transform-origin: center bottom;
   transform: translate(-42%, -51.6%)
              rotate(calc(var(--angle) * 1deg))
-             translate(0, -295px);
+             translate(0, -250px);
   transition: all 0.5s ease-in-out;
 }
 
@@ -448,10 +446,6 @@ En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
 .process-tekst-knap {
   text-align: center; /* Centrerer alt */
   color: #173A24; 
-  margin-top: 300px;
-  padding-top: 150px;
-  margin-bottom: -150px;
-  margin-left: 55px;
 }
 
 .process-tekst-knap h3 {
@@ -471,11 +465,6 @@ text-decoration: none;
 font-size: 20px;
 transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.process-tekst-knap .button {
-  margin-left: -10px;
-}
-
 .process-tekst-knap .button:hover,
 .bundsektion-sluttekst .button:hover {
   transform: scale(1.1);
@@ -492,8 +481,6 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   background-position: center;
   background-size: contain;
   justify-content: center;
-  margin-top: 220px;
-  margin-bottom: -190px;
 }
 
 .data-container{
