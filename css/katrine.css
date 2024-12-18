@@ -285,8 +285,9 @@ flex-direction: column;
   text-transform: uppercase; 
   max-width: 550px;
   line-height: 1; 
-  margin-bottom: 350px;
+  margin-bottom: 420px;
   margin-top: -50px ;
+  margin-left: 507px;
 }
 
 /* Container som centrerer cirklen */
@@ -294,8 +295,8 @@ flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   transform: translateX(-50px); 
+  margin-right: -50px;
 }
 
 .circle {
@@ -307,7 +308,7 @@ flex-direction: column;
 /* Placering af ikonerne cirkelært */
 .process-step {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -380,8 +381,8 @@ Når klassen "fade" tilføjes, sættes "opacity" til 0, hvilket gør elementet u
 */
 .process-details {
   position: absolute;
-  top: 170%;
-  left: 50%;
+  top: 177%;
+  left: 52%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #173A24;
@@ -440,14 +441,16 @@ En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
 .process-tekst-knap {
   text-align: center; /* Centrerer alt */
   color: #173A24; 
-  margin-top: 270px;
+  margin-top: 300px;
+  padding-top: 150px;
   margin-bottom: -150px;
+  margin-left: 55px;
 }
 
 .process-tekst-knap h3 {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 50px; 
+  
 }
 
 .process-tekst-knap .button {
@@ -482,7 +485,7 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   background-position: center;
   background-size: contain;
   justify-content: center;
-  margin-top: 180px;
+  margin-top: 220px;
   margin-bottom: -190px;
 }
 
@@ -508,6 +511,8 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
 }
 
 /* Return It i tal sektion styling slut */
+
+/*Genanvendelse sektion styling Start*/
 
 .fade-in {
   opacity: 0; 
@@ -668,4 +673,41 @@ Keyframes "moveUpAndDown" styrer bevægelsen, hvor elementet flyttes 10px op og 
   font-size: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+/*Genanvendelse sektion styling Slut*/
 
+/* Footer styling start */
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px ;
+  margin-right: 10px;
+  margin-top: 1980px;
+}
+
+.footer-info{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "railroad-gothic-atf", sans-serif;
+  color: var(--darkblue);
+}
+
+.footer-logo-copyright{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "railroad-gothic-atf", sans-serif;
+  color: var(--darkblue);
+}
+
+#footer-logo{
+  height: 100px;
+  width: 100px;
+}
+
+#faq{
+  font-family: "railroad-gothic-atf", sans-serif;
+  color: var(--darkblue);
+}
+/* Footer styling slut */
