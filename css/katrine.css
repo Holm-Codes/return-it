@@ -108,7 +108,6 @@ body{
   display: flex; /* Menuen bliver synlig */
 }
 
-
 /* Menu Items */
 .menu a {
   font-size: 18px;
@@ -132,16 +131,6 @@ body{
   transform: scale(1.2); /* Forstørrer teksten lidt, når den er klikket */
   color: var(--darkblue); 
 }
-
-/*.burger-menu a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  display: block;
-  padding: 10px;
-  transition: all 0.3s ease;
-}
-  */
 
 section {
   height: 100vh; /* Gør hver sektion så høj som skærmen */
@@ -180,10 +169,16 @@ section {
   position: absolute; /* Positionerer teksten så den ikke rykker sig i forhold til containeren */
   color: white;
   text-align:center;
+  align-content: center;
 }
 
 #titel{
   font-size: 100px;
+}
+
+#under-titel{
+  font-size: 40px;
+  font-family: "railroad-gothic-atf", sans-serif;
 }
 
 .button1{
@@ -479,8 +474,10 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   background-image: url("/images/data-background.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100% 410px;
   justify-content: center;
+  margin-bottom: -120px;
+  margin-top: 50px;
 }
 
 .data-container{
@@ -489,6 +486,7 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   justify-content: space-between;
   margin-left: 150px;
   margin-right: 150px;
+  margin-bottom: 80px;
 }
 
 .data-section{
@@ -525,7 +523,6 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: top center; 
-  margin-top: 100px;
 }
 
 .bundsektion-wrapper {
